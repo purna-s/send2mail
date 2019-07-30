@@ -1,0 +1,44 @@
+{
+  "name": "send2mail",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "ref": "github.com/purna-s/send2mail",  
+  "title": "send2mail",
+  "description": "Send mail to recipient",
+  "author": "Purna S <purna.sadanala@prowesssoft.com>",
+
+  "inputs":[
+    
+	{
+      "name": "A_server:port",
+      "type": "string",
+      "required": true
+    },
+	{
+      "name": "B_sender",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "C_rcpnt",
+      "type": "string",
+      "required": true
+    },
+	{
+      "name": "E_sub",
+      "type": "string",
+      "required": true
+    },
+	{
+      "name": "F_body",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "string"
+    }
+  ]
+}
