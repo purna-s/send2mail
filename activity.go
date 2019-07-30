@@ -79,13 +79,13 @@ func SendMail(addr, from, subject, body string, to []string) error {
 		return err
 	}
 	
-	t := []string{"To:", rcpnt}
+	t := []string{"To:", mrcpnt}
 	strings.Join(t, " ")
 	
-	s := []string{"Subject:", sub}
+	s := []string{"Subject:", msub}
 	strings.Join(s, " ")
 	
-	msg := []byte(strings.Join(t, " ") + "\r\n" + strings.Join(s, " ") + "\r\n" + mbody + "\r\n")
+	msg := []byte("To: recipient@example.net\r\n" + strings.Join(s, " ") + "\r\n" + mbody + "\r\n")
 	//msg := []byte("To: recipient@example.net\r\n" + "Subject: discount Gophers!\r\n" + "\r\n" + "This is the email body.\r\n")
 	_, err = w.Write([]byte(msg))
 	if err != nil {
