@@ -83,7 +83,7 @@ func SendMail(addr, from, subject, body string, to []string) error {
 	s := []string{"Subject:", subject}
 	strings.Join(s, " ")
 	
-	msg := []byte("To: recipient@example.net\r\n" + strings.Join(s, " ") + "\r\n" + body + "\r\n")
+	msg := []byte("To: CEP_System_Alerts@alert.lta.gov.sg\r\n" + strings.Join(s, " ") + "\r\n" + body + "\r\n")
 	//msg := []byte("To: recipient@example.net\r\n" + "Subject: discount Gophers!\r\n" + "\r\n" + "This is the email body.\r\n")
 	_, err = w.Write([]byte(msg))
 	if err != nil {
