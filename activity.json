@@ -39,6 +39,10 @@
     {
       "name": "output",
       "type": "string"
+    },
+	{
+      "name": "SentTime",
+      "type": "string"
     }
   ]
 }
