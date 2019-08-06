@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/smtp"
 	"strings"
+	"time"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
