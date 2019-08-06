@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"time"
 	"net/smtp"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
@@ -40,6 +41,7 @@ func (a *send2mail) Eval(ctx activity.Context) (done bool, err error) {
 	mbody := ctx.GetInput("F_body").(string)
 	
 	mrcpnt := []string{rcpnt}
+	dt := time.Now()
 	
 	mail := SendMail(serverport, sender, msub, mbody, mrcpnt)
 	//mail := SendMail("server:port", "CEP_System_Alerts@alert.lta.gov.sg", "TestMailSubject", "Test-SendMailBody", []string{"ikiran@ncs.com.sg"})
@@ -93,5 +95,6 @@ func SendMail(addr, from, subject, body string, to []string) error {
 	if err != nil {
 		return err
 	}
+	ctx.SetOutput("SentTime", dt)
 	return c.Quit()
 }
