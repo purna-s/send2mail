@@ -65,5 +65,8 @@ func TestEval(t *testing.T) {
 
 	output := tc.GetOutput("output")
 	assert.Equal(t, output, output)
+	output := tc.GetOutput("SentTime")
+	assert.Equal(t, SentTime, SentTime)
+	
 
 }
