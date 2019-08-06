@@ -54,6 +54,7 @@ func (a *send2mail) Eval(ctx activity.Context) (done bool, err error) {
 	fmt.Println("Activity has sent the mail Successfully")
 
 	ctx.SetOutput("output", "Mail_Sent_Successfully")
+	ctx.SetOutput("SentTime", dt)
 
 	return true, nil
 }
@@ -95,6 +96,6 @@ func SendMail(addr, from, subject, body string, to []string) error {
 	if err != nil {
 		return err
 	}
-	ctx.SetOutput("SentTime", dt)
+	
 	return c.Quit()
 }
