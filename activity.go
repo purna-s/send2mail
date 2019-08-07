@@ -40,7 +40,8 @@ func (a *send2mail) Eval(ctx activity.Context) (done bool, err error) {
 	msub := ctx.GetInput("E_sub").(string)
 	mbody := ctx.GetInput("F_body").(string)
 	
-	mrcpnt := []string{rcpnt}
+	//mrcpnt := []string{rcpnt}
+	mrcpnt := strings.Fields(rcpnt)
 	dt := time.Now()
 	
 	mail := SendMail(serverport, sender, msub, mbody, mrcpnt)
